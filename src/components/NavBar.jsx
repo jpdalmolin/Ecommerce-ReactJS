@@ -3,6 +3,8 @@ import App from '../App'
 import Button from 'react-bootstrap/Button';
 import CartWidget from './CartWidget';
 import ItemListContainer from './ItemListContainer';
+import './CartWidget.css'
+
 
 function NavBar() {
     return (
@@ -13,7 +15,7 @@ function NavBar() {
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#">Hidden brand</a>
+    <a class="navbar-brand" href="www.google.com">Hidden brand</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -27,21 +29,26 @@ function NavBar() {
           Categorias
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="www.google.com">Action</a>
+          <a class="dropdown-item" href="www.google.com">Another action</a>
+          <a class="dropdown-item" href="www.google.com">Something else here</a>
         </div>
+       
       </li>
     </ul>
+    </div>
+  
     <form class="form-inline my-2 my-lg-0 d-flex justify-content-end">
       <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search"></input>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-   
-  </div>
-  <CartWidget/>
+    
+ 
+  <div class=""><li><a class="" href="#"><CartWidget/></a></li> </div>
 </nav>
+
         </div>
+        
     )
 }
 
