@@ -26,7 +26,7 @@ function App() {
 
 
       <NavBar/>
-     <ItemListContainer greeting='Hola soy item...'  />
+     <ItemListContainer greeting='Bienvenido a mi tienda' user='Rodrigo' />
 
 
  
