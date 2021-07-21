@@ -25,16 +25,13 @@ function ItemCount({initial,stock,onAdd}) {
     }
     return (
         <div className="card text-center w-50">
-            <div className="card-header">
-            <h4>ItemCount</h4>
-            </div>
-            <div className="card-body">
+           
+            <div className="card-footer">
                 <button onClick={handleRemove}>
-                    -
-                
+            -               
                 </button>
                
-                <label className="alert alert-white">Cantidad {cantidad}</label>
+                <label className="alert alert-white">{cantidad}</label>
                 <button onClick={handleAdd}>+</button>
                 <button className="btn btn-primary btn-block" onClick={handleOnAdd} >Add to Cart</button>
                 

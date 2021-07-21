@@ -1,15 +1,15 @@
 import React from 'react'
 import Items from './Items'
-import productos from './productos'
 
-function ItemList({list}) {
+
+function ItemList({productos}) {
     return (
         <div className='shoplist'>
             {productos.map((item) => {
-              const {id, img, desc, price, stock} = producto;
+              const {id, nombre,stock,image} = item;
               return (
               <div >
-                <Items img={img} desc={desc} price={price} stock={stock}/>
+                <Items id={id} image={image} nombre={nombre} stock={stock}/>
               </div>
             )})}
           </div>

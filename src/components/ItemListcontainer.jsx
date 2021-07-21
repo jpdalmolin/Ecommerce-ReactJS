@@ -2,8 +2,7 @@ import React from 'react'
 import ItemCount from './ItemCount'
 import ItemList from './ItemList';
 import { useEffect,useState } from 'react';
-import productos from './productos.jsx'
-import Items from './Items';
+import {productos} from './productos.jsx'
 
 const handleCount=(cant)=>{
     alert("Usted agrego " +cant+ " a su carrito !");
@@ -12,28 +11,18 @@ const handleCount=(cant)=>{
 
 const ItemListContainer = (props) =>{
     const[itemList,setItemList]=useState([])
-    useEffect(()=>{
-        const task = new Promise((resuelto,rechazado)=>{
-                let status=200
-                if(status===200){
-
-                    setTimeout(()=>{
-                        resuelto(items)
-                    },2000)
-                }else{
-                    rechazado('rechazado')
-                }
-        })
-    const getPromiseTask=()=>{
-        return task
+useEffect(() => {
+    try {
+        setTimeout(()=>{
+            setItemList(productos)
+       },2000);
+   }  catch (error) {
+      console.log(error)
     }
-getPromiseTask()
-.then((resp)=>setItemList(resp))
-.catch(err=>{console.log('un error')})
-
-},[])
+    }, [])
 
 console.log(itemList)
+
     return (
         <div>
             <div classname="banner">
@@ -41,8 +30,8 @@ console.log(itemList)
                 <h2 className='user'>{props.user}</h2>
 
 
-                <ItemCount stock={5} initial={1} onAdd={handleCount}/>
-              <itemList lista={productos}/>
+                
+             {<ItemList productos={itemList}/>}
             </div>
         </div>
     )
@@ -51,3 +40,6 @@ console.log(itemList)
 export default ItemListContainer
 
 
+/*<ul>
+                {productos.map((productos)=><li key={productos.id}>{productos.id}<br/>{productos.nombre}</li>)}
+                </ul>*/
