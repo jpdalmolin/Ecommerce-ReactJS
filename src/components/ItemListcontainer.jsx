@@ -1,13 +1,13 @@
 import React from 'react'
-import ItemCount from './ItemCount'
+
 import ItemList from './ItemList';
 import { useEffect,useState } from 'react';
 import {productos} from './productos.jsx'
 
-const handleCount=(cant)=>{
+/*const handleCount=(cant)=>{
     alert("Usted agrego " +cant+ " a su carrito !");
 
-}
+}*/
 
 const ItemListContainer = (props) =>{
     const[itemList,setItemList]=useState([])

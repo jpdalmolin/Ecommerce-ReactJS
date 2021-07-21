@@ -1,8 +1,5 @@
-import React from 'react'
-import App from '../App'
-import Button from 'react-bootstrap/Button';
+import React from 'react';
 import CartWidget from './CartWidget';
-import ItemListContainer from './ItemListcontainer';
 import './CartWidget.css'
 
 
