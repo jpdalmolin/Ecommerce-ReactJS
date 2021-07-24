@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/ItemListcontainer'
 import {useState} from 'react'
 import React from 'react';
+import ItemDetailContainer from './container/ItemDetailContainer';
 
 function Titulo(){
 return(
@@ -46,7 +47,7 @@ setFecha(date)
      <ItemListContainer greeting='Bienvenido a mi tienda' user='Rodrigo' />
 
      <button onClick={handleCount} >Click</button>
- 
+    <ItemDetailContainer/>
     </div>
   );
 }
