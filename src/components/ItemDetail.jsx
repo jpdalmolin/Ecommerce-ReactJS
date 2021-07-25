@@ -1,14 +1,35 @@
 import React from 'react'
 
+import Card from 'react-bootstrap/Card'
+import {Row } from 'react-bootstrap'
+import ItemCount from './ItemCount'
+import Container from 'react-bootstrap/Container'
+import { Col } from 'react-bootstrap'
 
-function ItemDetail({item={}}) {
-    console.log(item)
+function ItemDetail({id,nombre,image,stock}) {
+
     return (
         <div>
-        <h3>Nombre{item.nombre}</h3>
-        <h3>Imagen{item.image}</h3>
-        <h3>Stock{item.stock}</h3>
-        
+         <Container fluid="md">
+        <Row>
+          <Col>
+          
+     
+<Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={image} />
+  <Card.Body>
+    <Card.Title>{nombre}</Card.Title>
+    <Card.Text>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </Card.Text>
+    Stock {stock}
+
+  </Card.Body>
+</Card>
+</Col>
+</Row>
+</Container>
         </div>
        
     )

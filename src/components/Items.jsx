@@ -30,6 +30,7 @@ export const Items = ({nombre,id,stock,image}) => {
     
     <ItemCount stock={5} initial={1} onAdd={handleCount}/>
   </Card.Body>
+  Stock {stock}
 </Card>
 </Col>
 </Row>
