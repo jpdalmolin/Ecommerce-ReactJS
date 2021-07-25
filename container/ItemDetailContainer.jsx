@@ -4,9 +4,10 @@ import {getMocks} from '../servicios/getMocks'
 import { productos } from '../components/productos'
 
 function ItemDetailContainer() {
-    const [item,setItem]=useState({})
+    const [item,setItem]=useState([])
   
 useEffect(() => {
+    
    getMocks()
    .then(resp=>setItem(resp))
 },[])
@@ -14,8 +15,8 @@ useEffect(() => {
 console.log(item)
 return (
     <div>
-        
-        <ItemDetail item={item}/>
+        {item.map(elemento => <ItemDetail  nombre={elemento.nombre}  image={elemento.image}
+stock={elemento.stock} />)}
         </div>
     )
 }
