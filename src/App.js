@@ -5,50 +5,47 @@ import ItemListContainer from './components/ItemListcontainer'
 import {useState} from 'react'
 import React from 'react';
 import ItemDetailContainer from './container/ItemDetailContainer';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
 
 function Titulo(){
 return(
-
 <h2>Hard Store </h2>
-
 )
 
-
 }
-
 function App() {
-
   const [contador, setContador]=useState(0)
   const [fecha, setFecha]=useState(null)
-
 function handleCount(){
-
 setContador(contador+1)
 let date=Date();
 setFecha(date)
-
-
 }
-
-
   return (
-  
-    <div className="App">
-      <Titulo/>
-      <nav class="navbar navbar-light bg-light d-flex justify-content-center">
-
-</nav>
-
-
+    <Router>
+      <Titulo/> 
       <NavBar/>
-      
+      <div className="App">
       {contador} <br/>
       {fecha}
+      <button onClick={handleCount} >Hora</button>
+        <Switch>
+    <Route exact path={`/detail/:detalleId`} component={ItemDetailContainer}>
+ 
+      </Route>
+      <Route exact path="/">
      <ItemListContainer greeting='Bienvenido a mi tienda' user='Rodrigo' />
-
-     <button onClick={handleCount} >Click</button>
-    <ItemDetailContainer/>
+     </Route>
+     <Route exact path="/">
+     <ItemListContainer greeting='Bienvenido a mi tienda' user='Rodrigo' />
+     </Route>
+     <Route exact path="/category/:categoryId">
+     <ItemListContainer greeting='Bienvenido a mi tienda' user='Rodrigo' />
+     </Route>
+    </Switch>
+   
     </div>
+    </Router>
   );
 }
 
