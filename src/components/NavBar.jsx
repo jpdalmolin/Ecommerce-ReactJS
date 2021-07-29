@@ -1,6 +1,8 @@
 import React from 'react';
 import CartWidget from './CartWidget';
 import './CartWidget.css'
+import {Link} from 'react-router-dom'
+
 
 
 function NavBar() {
@@ -12,26 +14,20 @@ function NavBar() {
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="www.google.com">Hidden brand</a>
+    <Link to="/">Hard Store</Link>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+       <span class="sr-only"><Link to="/category/procesador">Category</Link></span>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <span class="sr-only"><Link to="/category/mother">Link</Link></span>
       </li>
-      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Categorias
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="www.google.com">Action</a>
-          <a class="dropdown-item" href="www.google.com">Another action</a>
-          <a class="dropdown-item" href="www.google.com">Something else here</a>
-        </div>
+      <li class="nav-item">
+      <span class="sr-only"><Link to="/category/detail">Detail</Link></span>
+      </li>
        
-      </li>
+        
+   
     </ul>
     </div>
   
@@ -41,7 +37,7 @@ function NavBar() {
     </form>
     
  
-  <div class=""><li><a class="" href="#"><CartWidget/></a></li> </div>
+  <div class=""><Link to="/detail/cart"><li><CartWidget/></li></Link> </div>
 </nav>
 
         </div>
