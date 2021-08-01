@@ -12,8 +12,6 @@ export const handleCount=(cant)=>{
 
 }
 
-
-
 export const Items = ({nombre,id,stock,image,precio}) => {
     return (
       <>
