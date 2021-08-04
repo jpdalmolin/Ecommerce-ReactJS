@@ -5,8 +5,30 @@ import {Row } from 'react-bootstrap'
 import ItemCount from './ItemCount'
 import Container from 'react-bootstrap/Container'
 import { Col } from 'react-bootstrap'
+import { productos } from './productos'
+import {useState, useContext} from 'react'
+
+import { NotiContext } from '../context/CartContext'
+
 
 function ItemDetail({id,nombre,image,stock,precio}) {
+  const [cantidad,setCantidad]=useState(0)
+  const [pulsar, setPulsar]=useState(false)
+  const{cartList, guardarItem}=useContext(NotiContext)
+
+  function onAdd(count){
+setCantidad(count)
+guardarItem({productos,count})
+
+  }
+//  const {cart,setCart}=useCartContext();
+//  const{item}=useAppContext();
+//  const addToCart=id=>{
+  //  const findProductInDB=item.find(it => it.id ===id);
+//
+  //  setCart([...cart,findProductInDB])
+    //console.log(cart);
+  //}
 
     return (
         <div>
@@ -29,7 +51,7 @@ function ItemDetail({id,nombre,image,stock,precio}) {
     Precio {precio}
 
   </Card.Body>
-  <ItemCount stock={5} initial={1} onAdd={handleCount}/>
+  <ItemCount stock={5} initial={1} onAdd={onAdd} />
 </Card>
 </Col>
 </Row>
