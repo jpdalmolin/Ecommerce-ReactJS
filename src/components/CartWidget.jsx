@@ -1,6 +1,6 @@
 import React from 'react'
 import carro from './carro.svg'
-import './CartWidget.css'
+
 
 
 function CartWidget() {
