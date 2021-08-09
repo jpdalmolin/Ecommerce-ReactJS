@@ -1,20 +1,16 @@
 import React, {useContext} from 'react'
 import { NotiContext } from '../context/CartContext'
-
-
 function Cart() {
-    const {cartList, guardarItem, price, size} = useContext(NotiContext)
+    const {cartList} = useContext(NotiContext)
     console.log(cartList)
-    console.log(price())
-    console.log(size())
     return  (
         <>
            {cartList.map(item =>(
                <>
-                <div className="row" key={item.productos.id}> 
-                    <p className="col">{item.productos.nombre}</p>  
+                <div className="row" key={item.producto.id}> 
+                    <p className="col">{item.producto.nombre}</p> 
                     <p className="col">{item.quantity}</p>  
-                    <p className="col">{item.productos.precio}</p>  
+                    <p className="col">{item.producto.precio}</p>  
                 </div>
                 <hr/>
                 </>
@@ -22,5 +18,4 @@ function Cart() {
         </>
     )
 }
-
 export default Cart
