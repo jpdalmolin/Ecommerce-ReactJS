@@ -6,11 +6,7 @@ function ItemCount({initial,stock,onAdd}) {
     const handleAdd=()=>{
         if(cantidad<stock){
             setCantidad(cantidad+1)
-
-
         }
-
-
     }
     const handleRemove=()=>{
         if(cantidad>initial){

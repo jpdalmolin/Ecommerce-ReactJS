@@ -6,6 +6,9 @@ import Container from 'react-bootstrap/Container'
 import { Col } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import { Button } from 'react-bootstrap'
+import { CartContext } from '../context/CartContext'
+import { useContext } from 'react'
+
 
 export const handleCount=(cant)=>{
   alert("Usted agrego " +cant+ " a su carrito !");
@@ -13,8 +16,11 @@ export const handleCount=(cant)=>{
 }
 
 export const Items = ({nombre,id,stock,image,precio}) => {
+
     return (
       <>
+  
+    
       <Container fluid="md">
         <Row>
           <Col>
