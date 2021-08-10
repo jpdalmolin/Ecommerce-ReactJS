@@ -1,4 +1,8 @@
-Para levantar el proyecto desarrollado en react necesitamos ingresar en terminal el comando
+Para levantar el proyecto desarrollado en react necesitamos primero 
+
+Descargar Node.JS   (reiniciar la pc)
+
+ingresar en terminal el comando
 
 npm install
 
