@@ -23,5 +23,5 @@ npm install react-bootstrap@next bootstrap@5.0.2
 Luego para importacion de sus componentes, ejemplo:
 
 import 'bootstrap/dist/css/bootstrap.min.css';  (para css)
-import {Button] from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
