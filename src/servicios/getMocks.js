@@ -4,6 +4,7 @@ import { productos } from "../components/productos"
 
 
 const task=new Promise((res)=>{
+    
     res(productos)
     
 }, 2000)

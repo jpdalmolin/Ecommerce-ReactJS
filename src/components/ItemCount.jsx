@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 function ItemCount({initial,stock,onAdd}) {
     const [cantidad,setCantidad]=useState(initial)
+    const [pulsado,setPulsado]=useState(false)
     const handleAdd=()=>{
         if(cantidad<stock){
             setCantidad(cantidad+1)
@@ -18,15 +19,19 @@ function ItemCount({initial,stock,onAdd}) {
 
     const handleOnAdd=()=>{
             onAdd(cantidad)
-            show();
+            setPulsado(true)
+            
+            //show();
          
     }
-    function show()
-    {
-        document.getElementById('three').removeAttribute('disabled');
-        let boton= document.getElementById('two')
-        boton.parentNode.removeChild(boton);
-    }
+ //   function show()
+   // {
+   //     document.getElementById('three').removeAttribute('disabled');
+     //   let boton= document.getElementById('two')  
+     
+    // esta funcion AGREGAR BOTON POR JS!! <button className="btn btn-primary btn-block" id="two" onClick={handleOnAdd}>Add to Cart</button> <Link to={`/cart/`}><button type="button" id="three" disabled="disabled"> Terminar Compra</button></Link>
+       // boton.parentNode.removeChild(boton);
+    //}
     
 
     return (
@@ -39,8 +44,17 @@ function ItemCount({initial,stock,onAdd}) {
                
                 <label className="alert alert-white">{cantidad}</label>
                 <button onClick={handleAdd}>+</button>
-                <button className="btn btn-primary btn-block" id="two" onClick={handleOnAdd}>Add to Cart</button>
-                <Link to={`/cart/`}><button type="button" id="three" disabled="disabled"> Terminar Compra</button></Link>
+                { pulsado ?
+                
+                        <Link to={`/cart`} className="btn btn-success"> Ir a Cart </Link>
+                        :
+                        <button className="btn btn-primary btn-block"
+                                onClick={handleOnAdd}
+                                >
+                                    Add to Cart
+                                </button>
+                }
+            
                 
             </div>
         </div>

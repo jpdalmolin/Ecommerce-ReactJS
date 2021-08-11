@@ -1,6 +1,6 @@
 import React from 'react';
 import CartWidget from './CartWidget';
-import './CartWidget.css'
+
 import {Link} from 'react-router-dom'
 
 
@@ -17,10 +17,10 @@ function NavBar() {
     <Link to="/">Hard Store</Link>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-       <span class="sr-only"><Link to="/category/procesador">Category</Link></span>
+       <span class="sr-only"><Link to="/category/procesador">Procesadores</Link></span>
       </li>
       <li class="nav-item">
-      <span class="sr-only"><Link to="/category/mother">Link</Link></span>
+      <span class="sr-only"><Link to="/category/mother">Mother</Link></span>
       </li>
       <li class="nav-item">
       <span class="sr-only"><Link to="/category/detail">Detail</Link></span>
@@ -37,7 +37,7 @@ function NavBar() {
     </form>
     
  
-  <div class=""><Link to="/detail/cart"><li><CartWidget/></li></Link> </div>
+  <div class=""><Link to="/cart"><li><CartWidget/></li></Link> </div>
 </nav>
 
         </div>

@@ -10,7 +10,7 @@ export const productos=[
         image: image1,
         nombre:'Procesador Intel I3 10100',
         categoria:'procesador',
-        precio:'$13000',
+        precio:13000,
         stock:5
     },
     {
@@ -18,7 +18,7 @@ export const productos=[
         image: image2,
         nombre:'Motherboard Asus Prime A320m-k',
         categoria:'mother',
-        precio:'$8000',
+        precio:8000,
         stock:5
     },
     {
@@ -26,7 +26,7 @@ export const productos=[
         image: image3,
         nombre:'Procesador AMD 3700X',
         categoria:'procesador',
-        precio:'$40000',
+        precio:40000,
         stock:5
     },
     {
@@ -34,7 +34,7 @@ export const productos=[
         image: image4,
         nombre:'Motherboard Gigabyte H310M',
         categoria:'mother',
-        precio:'$17000',
+        precio:17000,
         stock:5
     }
    

@@ -19,34 +19,29 @@ export const Items = ({nombre,id,stock,image,precio}) => {
 
     return (
       <>
-  
-    
-      <Container fluid="md">
-        <Row>
-          <Col>
-          
-     
-<Card id={id} style={{heigh:"100%"}}>
-<Link to={`/detail/${id}`}>
-  <Card.Img variant="top" src={image} />
-  </Link>
-  <Card.Body>
+      
+   <Container fluid="md">
+      <Row>
+      <Col>
+    <Card style={{ width: '18rem' }}>
+    <Link to={`/detail/${id}`}>
+     <Card.Img variant="top" src={image} />
+     </Link>
+     <Card.Body>
     <Card.Title>{nombre}</Card.Title>
     <Card.Text>
       Some quick example text to build on the card title and make up the bulk of
       the card's content.
-     
     </Card.Text>
-    
-    <ItemCount stock={5} initial={1} onAdd={handleCount}/>
+    Precio {precio}
     <Link to={`/detail/${id}`}><Button variant="primary">Ver más</Button></Link>
   </Card.Body>
-  
-  Precio {precio}
+ 
 </Card>
 </Col>
 </Row>
 </Container>
+    
 </>
     )
   }

@@ -4,34 +4,62 @@ import {Row } from 'react-bootstrap'
 import ItemCount from './ItemCount'
 import Container from 'react-bootstrap/Container'
 import { Col } from 'react-bootstrap'
-import {useContext} from 'react'
+import {useContext,useState} from 'react'
 import { NotiContext } from '../context/CartContext'
+import CartContext from '../context/CartContext'
+import '../css/itemDetail.css'
+
+
 function ItemDetail({producto}) {
-  const{guardarItem}=useContext(NotiContext)
+
+  const [cantidad,setCantidad]=useState(0)
+  const{cartList,guardarItem}=useContext(NotiContext)
   console.log(producto)
+
  function onAdd(count){
-guardarItem({producto,count})
+   setCantidad(count) 
+   guardarItem({producto,quantity:count})
+  
   }
+
     return (
         <div>
-      <Container fluid="md">
-      <Row>
-      <Col>
-    <Card style={{ width: '18rem' }}>
-     <Card.Img variant="top" src={producto.image} />
-     <Card.Body>
-    <Card.Title>{producto.nombre}</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    Precio {producto.precio}
-  </Card.Body>
-  <ItemCount stock={5} initial={1} onAdd={onAdd} />
-</Card>
-</Col>
-</Row>
-</Container>
+
+<div class="container">
+    
+	<div class="row" id="ads">
+ 
+    <div class="col-md-4">
+        <div class="card rounded">
+            <div class="card-image">
+                <span class="card-notify-badge">{producto.nombre}</span>
+                <span class="card-notify-year">2018</span>
+                <img class="img-fluid" src={producto.image} alt="Alternate Text" />
+            </div>
+            <div class="card-image-overlay m-auto">
+                <span class="card-detail-badge">New</span>
+                <span class="card-detail-badge">${producto.precio}</span>
+        
+            </div>
+            <div class="card-body text-center">
+                <div class="ad-title m-auto">
+                    <h5>{producto.nombre}</h5>
+                </div>
+                <ItemCount stock={5} initial={1} onAdd={onAdd} />
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  
         </div>
     )
 }

@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom'
 import ItemList from './ItemList';
 import { useEffect,useState } from 'react';
 import {productos} from './productos.jsx'
-
+import Spinner from 'react-bootstrap/Spinner'
 
 /*const handleCount=(cant)=>{
     alert("Usted agrego " +cant+ " a su carrito !");
@@ -44,7 +44,9 @@ console.log(categoryId)
                 <h2 className='user'>{props.user}</h2>
 
 
-                {loading && "CARGANDO...."}
+                {loading && <div class="spinner-border" role="status">
+                            <span class="sr-only"></span>
+                            </div>}
              {!loading && <ItemList productos={itemList}/>}
             </div>
         </div>
