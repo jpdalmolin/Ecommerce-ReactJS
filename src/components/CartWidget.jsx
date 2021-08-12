@@ -9,13 +9,13 @@ import jQuery from 'jquery'
 
 function CartWidget() {
     
-    const {size} = useContext(NotiContext)
+    const {size,cartList} = useContext(NotiContext)
     console.log(size())
     return (
         <div classname="cartwidget">
             <button class="btn btn-secondary" type="button" id="dropdownMenuButton">
             CARRITO
-            <span id="carritoCantidad" class="badge badge.light">{size()}</span> </button>
+            <span id="carritoCantidad" class="badge badge.light">{cartList.length > 0 ? size() : ''}</span> </button>
             
            
           

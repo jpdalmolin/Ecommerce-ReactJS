@@ -4,18 +4,51 @@ import ItemList from './ItemList';
 import { useEffect,useState } from 'react';
 import {productos} from './productos.jsx'
 import Spinner from 'react-bootstrap/Spinner'
-
+import { getFirestore } from '../servicios/firebaseService';
 /*const handleCount=(cant)=>{
     alert("Usted agrego " +cant+ " a su carrito !");
 
 }*/
 
 const ItemListContainer = (props) =>{
+    
     const[itemList,setItemList]=useState([])
     const[loading,setLoading]=useState(true);
     const{categoryId}=useParams()
 useEffect(() => {
-    setLoading(true)
+   try{
+
+    if(categoryId===undefined){
+    const dbQuery= getFirestore()
+    dbQuery.collection('items').get()
+                               //where('precio', '>=',14000)
+    .then(resp=> setItemList(resp.docs.map(ite=>({...ite.data(),id:ite.id}))))
+    }else{
+        const dbQuery= getFirestore()
+        dbQuery.collection('items').where('categoria','==',categoryId).get()
+                                   //where('precio', '>=',14000)
+        .then(resp=> setItemList(resp.docs.map(ite=>({...ite.data(),id:ite.id}))))
+    }
+    }catch (error) {
+        console.log(error)
+      }
+},[])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*   setLoading(true)
     try {
         if(categoryId===undefined){
         setTimeout(()=>{
@@ -31,9 +64,9 @@ useEffect(() => {
    }  catch (error) {
       console.log(error)
     }
-    }, [categoryId])
+    }, [])
 
-
+*/
 
 console.log(categoryId)
 
@@ -44,10 +77,8 @@ console.log(categoryId)
                 <h2 className='user'>{props.user}</h2>
 
 
-                {loading && <div class="spinner-border" role="status">
-                            <span class="sr-only"></span>
-                            </div>}
-             {!loading && <ItemList productos={itemList}/>}
+              
+              <ItemList productos={itemList}/>
             </div>
         </div>
     )
