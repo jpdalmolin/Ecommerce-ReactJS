@@ -3,14 +3,13 @@ import './App.css';
 import NavBar from './components/NavBar.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/ItemListcontainer'
-import { useEffect,useState,useContext } from 'react';
+import {useState } from 'react';
 import React from 'react';
 import ItemDetailContainer from './container/ItemDetailContainer';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
-import {NotiContext} from './context/CartContext';
-import CartContextProvider from './context/CartContext';
 import Cart from './components/Cart';
 import UseNotiContext from './context/CartContext';
+
 
 
 function Titulo(){
@@ -32,7 +31,7 @@ setFecha(date)
 }
   return (
     <UseNotiContext>
-   <Router>
+   <Router forceRefresh={true}>
       <Titulo/> 
       <NavBar/>
       <div className="App">
@@ -46,8 +45,9 @@ setFecha(date)
     <Route exact path={`/detail/:detalleId`} component={ItemDetailContainer}>
  
       </Route>
-     <Route exact path="/category/:categoryId">
+     <Route exact path="/category/:categoryId" >
      <ItemListContainer greeting='Bienvenido a mi tienda' user='Rodrigo' />
+  
      </Route>
     
      <Route exact path={`/cart`} component={Cart}>

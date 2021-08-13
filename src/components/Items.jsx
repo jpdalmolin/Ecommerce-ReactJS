@@ -1,13 +1,12 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import {Row } from 'react-bootstrap'
-import ItemCount from './ItemCount'
+
 import Container from 'react-bootstrap/Container'
 import { Col } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import { Button } from 'react-bootstrap'
-import { CartContext } from '../context/CartContext'
-import { useContext } from 'react'
+
 
 
 export const handleCount=(cant)=>{

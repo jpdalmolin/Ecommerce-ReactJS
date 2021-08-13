@@ -1,13 +1,15 @@
 import React from 'react';
 import CartWidget from './CartWidget';
-import { useParams } from 'react-router';
+
 import {Link} from 'react-router-dom'
-import Items from './Items';
 
 
 function NavBar() {
-  const{categoryId}=useParams()
+ 
+
+  
     return (
+      
         <div>
        
        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -18,7 +20,7 @@ function NavBar() {
     <Link to="/">Hard Store</Link>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-       <span class="sr-only"><Link to={`/category/procesador`}>Procesadores</Link></span>
+       <span class="sr-only"><Link to="/category/procesador">Procesadores</Link></span>
       </li>
       <li class="nav-item">
       <span class="sr-only"><Link to="/category/mother">Mother</Link></span>

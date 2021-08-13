@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap'
 
 
 function Cart() {
-    const {cartList,guardarItem,size,price,removeFromCart,cleanList} = useContext(NotiContext)
+    const {cartList,size,price,removeFromCart,cleanList} = useContext(NotiContext)
     console.log(cartList)
     
     console.log(size())

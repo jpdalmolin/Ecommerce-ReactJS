@@ -1,10 +1,8 @@
-import carro from './carro.svg'
+
 import React, {useContext} from 'react'
 import { NotiContext } from '../context/CartContext'
 import '../css/cartWidget.css'
-import { Button } from 'react-bootstrap'
-import Badge from 'react-bootstrap/Badge'
-import jQuery from 'jquery'
+
 
 
 function CartWidget() {

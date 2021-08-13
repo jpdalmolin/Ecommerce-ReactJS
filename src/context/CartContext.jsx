@@ -1,10 +1,6 @@
 import { createContext, useState } from "react";
-import CartWidget from "../components/CartWidget";
-import jQuery from "jquery";
-import $ from 'jquery'
-import ItemDetail from "../components/ItemDetail";
 
-import { Component, render } from 'react-dom'
+import ItemDetail from "../components/ItemDetail";
 
 
 export const NotiContext = createContext()//estados y funciones sean globales para todos. 

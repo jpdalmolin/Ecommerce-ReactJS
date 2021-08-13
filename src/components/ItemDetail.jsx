@@ -1,12 +1,10 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card'
-import {Row } from 'react-bootstrap'
+
 import ItemCount from './ItemCount'
-import Container from 'react-bootstrap/Container'
-import { Col } from 'react-bootstrap'
+
 import {useContext,useState} from 'react'
 import { NotiContext } from '../context/CartContext'
-import CartContext from '../context/CartContext'
+
 import '../css/itemDetail.css'
 
 

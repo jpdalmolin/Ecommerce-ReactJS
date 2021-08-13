@@ -2,8 +2,7 @@ import React from 'react'
 import {useParams} from 'react-router-dom'
 import ItemList from './ItemList';
 import { useEffect,useState } from 'react';
-import {productos} from './productos.jsx'
-import Spinner from 'react-bootstrap/Spinner'
+
 import { getFirestore } from '../servicios/firebaseService';
 /*const handleCount=(cant)=>{
     alert("Usted agrego " +cant+ " a su carrito !");
@@ -13,7 +12,7 @@ import { getFirestore } from '../servicios/firebaseService';
 const ItemListContainer = (props) =>{
     
     const[itemList,setItemList]=useState([])
-    const[loading,setLoading]=useState(true);
+
     const{categoryId}=useParams()
 useEffect(() => {
    try{
@@ -28,13 +27,15 @@ useEffect(() => {
         dbQuery.collection('items').where('categoria','==',categoryId).get()
                                    //where('precio', '>=',14000)
         .then(resp=> setItemList(resp.docs.map(ite=>({...ite.data(),id:ite.id}))))
+
+        
     }
     }catch (error) {
         console.log(error)
       }
 },[])
 
-
+console.log(categoryId)
 
 
 
