@@ -1,15 +1,53 @@
-import React, {useContext} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import { NotiContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
+import firebase from 'firebase'
+import { getFirestore } from '../servicios/firebaseService'
+import { useParams } from 'react-router'
 
-
+//const listaItem=[{id:'1',nombre:'asd'}]
 function Cart() {
-    const {cartList,size,price,removeFromCart,cleanList} = useContext(NotiContext)
-    console.log(cartList)
+    const {guardarItem,size,price,removeFromCart,cleanList} = useContext(NotiContext)
+        const {detalleId}=useParams()    
+        const [buyer,setBuyer]=useState({})
+        const {cartList}=useContext(NotiContext)
+        const [item,setItem]=useState([])
+
+        const order={buyer, item:cartList , date: firebase.firestore.Timestamp.fromDate(new Date)}
+
+        console.log(detalleId)
+
+        const handlerChange =(evt)=>{
+            setBuyer({
+                ...buyer,
+                [evt.target.name]: evt.target.value
+            })}
+            const handlerSubmit =(evt)=>{
+                evt.preventDefault()
+                const db=getFirestore()
     
-    console.log(size())
-    console.log(price())
+                db.collection('order').add(order)
+                .then(resp=> console.log(resp))
+                .catch(resp=> console.log(resp))
+                
+            }
+    
+        
+console.log(order)
+
+
+
+
+
+
+
+
+  
+  //  console.log(cartList)
+    
+  //  console.log(size())
+   // console.log(price())
 
 
 
@@ -39,6 +77,33 @@ function Cart() {
                 {cartList.length>0 ?
                 <>
                 <h4>Su total es : ${price()}</h4>  <button className="btn btn-danger" onClick={cleanList}>X</button></>:'' }
+
+                <form 
+                    onChange={handlerChange}
+                    onSubmit={handlerSubmit}
+                
+                >
+                    <input 
+                        type="text"
+                        placeholder='nombre'
+                        name='name'
+                        value={order.name}
+                    />
+                    <input 
+                        type="text"
+                        placeholder='ingresar cel'
+                        name='phone'
+                        value={order.phone}
+                    />
+                    <input 
+                        type="text"
+                        placeholder='ingresar email'
+                        name='email'
+                        value={order.email}
+                    />
+                    <button>enviar</button>
+                    
+                </form>
         </>
     )
 }

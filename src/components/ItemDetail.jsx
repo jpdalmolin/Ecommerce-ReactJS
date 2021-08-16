@@ -17,8 +17,12 @@ function ItemDetail({producto}) {
  function onAdd(count){
    setCantidad(count) 
    guardarItem({producto,quantity:count})
-  
+    
   }
+
+
+
+
 
     return (
         <div>

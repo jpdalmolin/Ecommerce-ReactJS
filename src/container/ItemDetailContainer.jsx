@@ -3,7 +3,7 @@ import ItemDetail from '../components/ItemDetail'
 import {getMocks} from '../servicios/getMocks'
 import{useParams} from 'react-router-dom'
 import { getFirestore } from '../servicios/firebaseService'
-
+import Cart from '../components/Cart'
 
 function ItemDetailContainer() {
     const [item,setItem]=useState([])
@@ -44,6 +44,7 @@ console.log(detalleId)*/
 return (
     <div>
         <ItemDetail producto={item}/>
+       
         </div>
     )
 }

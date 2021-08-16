@@ -11,19 +11,18 @@ export default function UseNotiContext({children}){
         console.log(newItem)
         const idx = cartList.findIndex(producto => newItem.producto.id === producto.producto.id)//-1 , posicion
         console.log('index:',idx);
-       
         if(idx === -1){
-           
             setCartList([...cartList,newItem])
         }else{
             const newQuantity= cartList[idx].quantity + newItem.quantity
             console.log('newQuantity', newQuantity)
             const oldList = cartList.filter(old=> old.producto.id !== newItem.producto.id)
             console.log(oldList);
-            
             setCartList([...oldList,{producto: newItem.producto,quantity: newQuantity}])
-        }//[item1, item2,item3]
+        }
     }
+    console.log(cartList)
+    console.log(setCartList)
     const removeFromCart = (itemId) =>{
         cartList.splice(
             cartList.findIndex(( item => item.id !== itemId)), 1)   
@@ -54,4 +53,4 @@ export default function UseNotiContext({children}){
             {children}
         </NotiContext.Provider>
     )
-};
+}
