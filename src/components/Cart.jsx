@@ -8,10 +8,10 @@ import { useParams } from 'react-router'
 
 //const listaItem=[{id:'1',nombre:'asd'}]
 function Cart() {
-    const {guardarItem,size,price,removeFromCart,cleanList} = useContext(NotiContext)
+    const {cartList,guardarItem,size,price,removeFromCart,cleanList} = useContext(NotiContext)
         const {detalleId}=useParams()    
         const [buyer,setBuyer]=useState({})
-        const {cartList}=useContext(NotiContext)
+   
         const [item,setItem]=useState([])
 
         const order={buyer, item:cartList , date: firebase.firestore.Timestamp.fromDate(new Date)}
@@ -33,17 +33,9 @@ function Cart() {
                 
             }
     
-        
+     
 console.log(order)
-
-
-
-
-
-
-
-
-  
+console.log(cartList)
   //  console.log(cartList)
     
   //  console.log(size())
@@ -59,10 +51,10 @@ console.log(order)
          {(cartList.length > 0) ?
            cartList.map(item =>(
                <>
-                <div className="row" key={item.producto.id}> 
-                    <p className="col">{item.producto.nombre}</p> 
+                <div className="row" key={item.id}> 
+                    <p className="col">{item.nombre}</p> 
                     <p className="col">{item.quantity}</p>  
-                    <p className="col">{item.producto.precio}</p>  
+                    <p className="col">{item.precio}</p>  
                       
                     <button className="btn btn-danger" onClick={removeFromCart}>X</button>
                 </div>
