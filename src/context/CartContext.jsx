@@ -9,24 +9,25 @@ export default function UseNotiContext({children}){
     
     const [cartList, setCartList] = useState([])// {item: item, cantidad: cantidad}
    
-    function guardarItem(producto,cantidad){
-      
- //       console.log(newItem)
-  //    console.log(cartList)
-    //  const idx = cartList.findIndex(producto => producto.producto.id === producto.items.id)//-1 , posicion
-      // console.log('index:',idx)
-       // console.log(cartList)
-        //if(idx === -1){
-        setCartList([...cartList,{'item':producto ,'quantity':cantidad}]) 
-            console.log(producto,cantidad)
-      //  }else{
-       //    const newCantidad= cartList[idx].cantidad + producto.cantidad
-        //  console.log('newCantidad', newCantidad)
-         //  const oldList = cartList.filter(old=> old.producto.id !== old.items.id)
-          // console.log(oldList);
-         // setCartList([...oldList,{producto: producto,cantidad: newCantidad}])
-        
-   // }
+    const guardarItem = (producto, cantidad) => {
+        if(isInCart(producto.id)){
+            let index = cartList.findIndex((e) => e.item.id === producto.id)
+            const oldQt = cartList[index].quantity
+            cartList.splice(index, 1)
+            setCartList([...cartList, {'item': producto, 'quantity': cantidad + oldQt}])
+        }else{
+            setCartList([...cartList, {'item': producto , 'quantity': cantidad }])
+        }
+ }
+    const isInCart = (id) => {
+        return cartList.find((item)=>{
+            if(item.item.id !== id){
+                return false
+            }
+            else{
+                return item.item.id
+            }
+        })
     }
     console.log(cartList)
     console.log(setCartList)
