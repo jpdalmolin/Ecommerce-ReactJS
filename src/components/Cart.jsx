@@ -14,7 +14,7 @@ function Cart() {
    
         const [item,setItem]=useState([])
 
-        const order={buyer, item:cartList , date: firebase.firestore.Timestamp.fromDate(new Date)}
+        const order={buyer, item:cartList , date: firebase.firestore.Timestamp.fromDate(new Date),total:(price())}
 
         console.log(detalleId)
 
