@@ -38,10 +38,10 @@ export default function UseNotiContext({children}){
     }
     
     const price =()=>{
-       return cartList.reduce((acum, valor)=>(acum + (valor.cantidad*valor.producto.precio)), 0) //[item.cantidad, ]
+       return cartList.reduce((acum, valor)=>(acum + (valor.quantity*valor.item.precio)), 0) //[item.cantidad, ]
   }
     const size =()=>{
-        return cartList.reduce((acum, valor)=> acum + valor.cantidad, 0) //[item.cantidad],0) 
+        return cartList.reduce((acum, valor)=> acum + valor.quantity, 0) //[item.cantidad],0) 
 
     }
     function cleanList (){

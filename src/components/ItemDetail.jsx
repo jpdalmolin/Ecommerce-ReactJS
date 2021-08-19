@@ -4,6 +4,7 @@ import {useContext} from 'react'
 import { NotiContext } from '../context/CartContext'
 import '../css/itemDetail.css'
 function ItemDetail({producto}) {
+    
 const {guardarItem} = useContext(NotiContext)
  function onAdd(cantidad){
    guardarItem(producto, cantidad)

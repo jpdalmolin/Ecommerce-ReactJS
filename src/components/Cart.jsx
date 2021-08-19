@@ -51,10 +51,13 @@ console.log(cartList)
          {(cartList.length > 0) ?
            cartList.map(item =>(
                <>
-                <div className="row" key={item.id}> 
-                    <p className="col">{item.nombre}</p> 
+                <div className="row" key={item.item.id}> 
+                <p className="col">{item.item.id}</p> 
+                    <p className="col">{item.item.nombre}</p> 
+                    <p className="col">{item.item.categoria}</p> 
                     <p className="col">{item.quantity}</p>  
-                    <p className="col">{item.precio}</p>  
+                    <p className="col"><img class="img-fluid" src={item.item.image} alt="Alternate Text" /></p>  
+                    <p className="col">{item.item.precio}</p>  
                       
                     <button className="btn btn-danger" onClick={removeFromCart}>X</button>
                 </div>

@@ -31,7 +31,7 @@ setFecha(date)
 }
   return (
     <UseNotiContext>
-   <Router forceRefresh={true}>
+   <Router >
       <Titulo/> 
       <NavBar/>
       <div className="App">
@@ -39,18 +39,18 @@ setFecha(date)
       {fecha}
       <button onClick={handleCount} >Hora</button>
         <Switch>
-        <Route exact path="/">
-     <ItemListContainer greeting='Bienvenido a mi tienda' user='Rodrigo' />
+        <Route forceRefresh={true} exact path="/">
+     <ItemListContainer  greeting='Bienvenido a mi tienda' user='Rodrigo' />
      </Route>
-    <Route exact path={`/detail/:detalleId`} component={ItemDetailContainer}>
+    <Route forceRefresh={true} exact path={`/detail/:detalleId`} component={ItemDetailContainer}>
  
       </Route>
-     <Route exact path="/category/:categoryId" >
+     <Route forceRefresh={true} exact path="/category/:categoryId" >
      <ItemListContainer greeting='Bienvenido a mi tienda' user='Rodrigo' />
   
      </Route>
     
-     <Route exact path={`/cart`} component={Cart}>
+     <Route forceRefresh={false} exact path={`/cart`} component={Cart}>
  
       </Route>
       
