@@ -1,6 +1,9 @@
 # CoderHouse Ecommerce en React JS
   Proyecto final incompleto para comercializar.
-
+  El proyecto es un Ecommerce, que me permite visualizar los productos provenientes de Firebase.
+  Puedo navegar por las categorias desde Navbar, o clickear directo en todos los productos para realizar una compra.
+  una vez que añado al carrito puedo dirigirme al carrito y finalizar la compra.
+  La orden viajará a FireBase almacenandose allí, y confirmando la compra. 
 
 ## Para levantar el proyecto desarrollado en react necesitamos primero 
 
