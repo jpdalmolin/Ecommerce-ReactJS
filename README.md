@@ -1,6 +1,5 @@
 # CoderHouse Ecommerce en React JS
-  Proyecto final 
- **incompleto para comercializar.
+  Proyecto final incompleto para comercializar.
 
 
 ## Para levantar el proyecto desarrollado en react necesitamos primero 
