@@ -1,4 +1,4 @@
-## CoderHouse Ecommerce en React JS
+# CoderHouse Ecommerce en React JS
 ##  Proyecto final incompleto para comercializar.
 
 
