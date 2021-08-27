@@ -30,7 +30,7 @@ Para su instalacion el comando:
 
 Se utilizó Firebase para sincronizar el proyecto.
 
-- **Luego para importacion de sus componentes, ejemplo:
+- **Luego para importacion de sus componentes, ejemplo:**
 
 import 'bootstrap/dist/css/bootstrap.min.css';  (para css)
 import {Button} from 'react-bootstrap';
