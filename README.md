@@ -1,36 +1,36 @@
 # CoderHouse Ecommerce en React JS
-##  Proyecto final incompleto para comercializar.
+  Proyecto final **incompleto para comercializar.
 
 
-#Para levantar el proyecto desarrollado en react necesitamos primero 
+## Para levantar el proyecto desarrollado en react necesitamos primero 
 
-##Descargar Node.JS   (reiniciar la pc)
+**Descargar Node.JS   (reiniciar la pc)
 
-ingresar en terminal el comando
+**ingresar en terminal el comando
 
-##npm install
+**npm install
 
-Luego de la instalacion para que levante la pagina
+### Luego de la instalacion para que levante la pagina
 
-npm start 
+**npm start 
 
-luego para que funcionen las rutas (navegacion entre paginas)
+### Luego para que funcionen las rutas (navegacion entre paginas)
 
-npm install react router dom
+**npm install react router dom
 
-Utilicé bootstrap para el diseño de las paginas
+### Bootstrap para el diseño de las paginas
 
 Para su instalacion el comando:
 
-npm install react-bootstrap@next bootstrap@5.0.2
+**npm install react-bootstrap@next bootstrap@5.0.2
 
-instalar iconos de bootstrap
+### instalar iconos de bootstrap
 
-npm i bootstrap-icons
+**npm i bootstrap-icons
 
 Se utilizó Firebase para sincronizar el proyecto.
 
-Luego para importacion de sus componentes, ejemplo:
+**Luego para importacion de sus componentes, ejemplo:
 
 import 'bootstrap/dist/css/bootstrap.min.css';  (para css)
 import {Button} from 'react-bootstrap';
