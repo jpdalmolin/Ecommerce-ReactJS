@@ -6,7 +6,7 @@
 
 **Descargar Node.JS   (reiniciar la pc)**
 
-**ingresar en terminal el comando**
+Ingresar en terminal el comando
 
 **npm install**
 
