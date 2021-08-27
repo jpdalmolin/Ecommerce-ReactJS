@@ -10,7 +10,7 @@ Luego de la instalacion para que levante la pagina
 
 npm start 
 
-luego para que funcionen las rutas
+luego para que funcionen las rutas (navegacion entre paginas)
 
 npm install react router dom
 
@@ -23,6 +23,8 @@ npm install react-bootstrap@next bootstrap@5.0.2
 instalar iconos de bootstrap
 
 npm i bootstrap-icons
+
+Se utilizó Firebase para sincronizar el proyecto.
 
 Luego para importacion de sus componentes, ejemplo:
 
