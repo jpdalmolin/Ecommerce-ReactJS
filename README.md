@@ -12,7 +12,7 @@
 
 ### Luego de la instalacion para que levante la pagina
 
-**npm start **
+**npm start**
 
 ### Luego para que funcionen las rutas (navegacion entre paginas)
 
