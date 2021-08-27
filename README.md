@@ -4,7 +4,7 @@
 
 ## Para levantar el proyecto desarrollado en react necesitamos primero 
 
-**Descargar Node.JS   (reiniciar la pc)**
+- **Descargar Node.JS   (reiniciar la pc)**
 
 Ingresar en terminal el comando
 
