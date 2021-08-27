@@ -1,3 +1,7 @@
+CoderHouse Ecommerce en React JS
+Proyecto final incompleto para comercializar.
+
+
 Para levantar el proyecto desarrollado en react necesitamos primero 
 
 Descargar Node.JS   (reiniciar la pc)
