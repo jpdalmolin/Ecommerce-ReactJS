@@ -13,10 +13,6 @@ Ingresar en terminal el comando
 
 - **npm install**
 
-### Luego de la instalacion para que levante la pagina
-
-- **npm start**
-
 ### Luego para que funcionen las rutas (navegacion entre paginas)
 
 - **npm install react router dom**
@@ -30,6 +26,10 @@ Para su instalacion el comando:
 ### instalar iconos de bootstrap
 
 - **npm i bootstrap-icons**
+
+### Luego de la instalacion para que levante la pagina
+
+- **npm start**
 
 Se utilizó Firebase para sincronizar el proyecto.
 
