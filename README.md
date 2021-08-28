@@ -7,6 +7,10 @@
 
 ## Para levantar el proyecto desarrollado en react necesitamos primero 
 
+hacer un git init en una carpeta
+
+y despues un git pull https://github.com/jpdalmolin/Ecommerce-ReactJS
+
 - **Descargar Node.JS   (reiniciar la pc)**
 
 Ingresar en terminal el comando
