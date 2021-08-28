@@ -1,22 +1,16 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React, {useState, useContext} from 'react'
 import { NotiContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import firebase from 'firebase'
 import { getFirestore } from '../servicios/firebaseService'
-import { useParams } from 'react-router'
 
-//const listaItem=[{id:'1',nombre:'asd'}]
+
 function Cart() {
-    const {cartList,guardarItem,size,price,removeFromCart,cleanList} = useContext(NotiContext)
-        const {detalleId}=useParams()    
+    const {cartList,price,removeFromCart,cleanList} = useContext(NotiContext)
+         
         const [buyer,setBuyer]=useState({})
-   
-        const [item,setItem]=useState([])
-
-        const order={buyer, item:cartList , date: firebase.firestore.Timestamp.fromDate(new Date),total:(price())}
-
-        console.log(detalleId)
+        const order={buyer, item:cartList , date: firebase.firestore.Timestamp.fromDate(new Date()),total:(price())}
 
         const handlerChange =(evt)=>{
             setBuyer({
@@ -28,20 +22,9 @@ function Cart() {
                 const db=getFirestore()
     
                 db.collection('order').add(order)
-                .then(resp=> console.log(resp))
-                .catch(resp=> console.log(resp))
+                
                 
             }
-    
-     
-console.log(order)
-console.log(cartList)
-  //  console.log(cartList)
-    
-  //  console.log(size())
-   // console.log(price())
-
-
 
     return  (
         <>
@@ -52,12 +35,12 @@ console.log(cartList)
            cartList.map(item =>(
                <>
                 <div className="row" key={item.item.id}> 
-                <p className="col">{item.item.id}</p> 
-                    <p className="col">{item.item.nombre}</p> 
-                    <p className="col">{item.item.categoria}</p> 
-                    <p className="col">{item.quantity}</p>  
-                    <p className="col"><img class="img-fluid" src={item.item.image} alt="Alternate Text" /></p>  
-                    <p className="col">{item.item.precio}</p>  
+                <p className="col"key="uniqueId9595">{item.item.id}</p> 
+                    <p className="col" key="uniqueId9593">{item.item.nombre}</p> 
+                    <p className="col" key="uniqueId959222">{item.item.categoria}</p> 
+                    <p className="col" key="uniqueId953333">{item.quantity}</p>  
+                    <p className="col" key="uniqueId959333333"><img className="img-fluid" src={item.item.image} alt="Alternate Text" /></p>  
+                    <p className="col" key="uniqueId95921313">{item.item.precio}</p>  
                       
                     <button className="btn btn-danger" onClick={removeFromCart}>X</button>
                 </div>
@@ -65,18 +48,15 @@ console.log(cartList)
                 <hr/>
                
                 </>))   
-
-            
                  : <h3>No hay items en el carrito
                  </h3>             }
                 {cartList.length>0 ?
                 <>
-                <h4>Su total es : ${price()}</h4>  <button className="btn btn-danger" onClick={cleanList}>X</button></>:'' }
-
+                <h4  key="uniqueId9324234593">Su total es : ${price()}</h4>  <button className="btn btn-danger" onClick={cleanList}>X</button></>:'' }
+                {cartList.length>0 ?
                 <form 
                     onChange={handlerChange}
                     onSubmit={handlerSubmit}
-                
                 >
                     <input 
                         type="text"
@@ -91,14 +71,24 @@ console.log(cartList)
                         value={order.phone}
                     />
                     <input 
+                    id='emailV'
                         type="text"
                         placeholder='ingresar email'
                         name='email'
                         value={order.email}
                     />
-                    <button>enviar</button>
+                      <input 
+                      id='emailD'
+                        type="text"
+                        placeholder='Reingresar email'
+                        name='reingresarEmail'
+                        value={order.reingresarEmail}
+                        
+                    /> <button disabled={order.buyer.email !== order.buyer.reingresarEmail} >Confirmar Compra</button>
+                   
                     
                 </form>
+: ""}
         </>
     )
 }

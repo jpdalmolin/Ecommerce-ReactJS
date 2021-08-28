@@ -3,31 +3,36 @@ import ItemCount from './ItemCount'
 import {useContext} from 'react'
 import { NotiContext } from '../context/CartContext'
 import '../css/itemDetail.css'
+import Card from 'react-bootstrap/Card'
 function ItemDetail({producto}) {
     
 const {guardarItem} = useContext(NotiContext)
  function onAdd(cantidad){
    guardarItem(producto, cantidad)
-   console.log(cantidad)
-   console.log(producto)
+
   }
     return (
         <div>
-<div class="container">
-    <div class="row" id="ads">
-    <div class="col-md-4">
-        <div class="card rounded">
-            <div class="card-image">
-                <span class="card-notify-badge">{producto.nombre}</span>
-                <span class="card-notify-year">2018</span>
-                <img class="img-fluid" src={producto.image} alt="Alternate Text" />
+<div className="container">
+    <div className="row" id="ads">
+    <div className="col-md-4">
+        <div className="card rounded">
+            <div className="card-image">
+                <span className="card-notify-badge">{producto.nombre}</span>
+                <span className="card-notify-year">2018</span>
+                <img className="img-fluid" src={producto.image} alt="Alternate Text" />
             </div>
-            <div class="card-image-overlay m-auto">
-                <span class="card-detail-badge">New</span>
-                <span class="card-detail-badge">${producto.precio}</span>
+            <div className="card-image-overlay m-auto">
+                <span className="card-detail-badge">New</span>
+                <span className="card-detail-badge">${producto.precio}</span>
             </div>
-            <div class="card-body text-center">
-                <div class="ad-title m-auto">
+            <Card.Text>
+             Some quick example text to build on the card title and make up the bulk of
+                 the card's content.
+            </Card.Text>
+  
+            <div className="card-body text-center">
+                <div className="ad-title m-auto">
                     <h5>{producto.nombre}</h5>
                 </div>
                 <ItemCount stock={5} initial={1} onAdd={onAdd}/>

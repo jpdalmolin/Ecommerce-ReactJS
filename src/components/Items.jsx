@@ -14,7 +14,7 @@ export const handleCount=(cant)=>{
 
 }
 
-export const Items = ({nombre,id,stock,image,precio,categoria}) => {
+export const Items = ({nombre,id,image,precio}) => {
 
     return (
       <>
@@ -32,6 +32,7 @@ export const Items = ({nombre,id,stock,image,precio,categoria}) => {
       Some quick example text to build on the card title and make up the bulk of
       the card's content.
     </Card.Text>
+  
     Precio {precio}
     <Link to={`/detail/${id}`}><Button variant="primary">Ver más</Button></Link>
   </Card.Body>

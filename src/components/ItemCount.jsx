@@ -18,13 +18,7 @@ function ItemCount({initial,stock,onAdd}) {
             setPulsado(true)
             //show();
     }
- //   function show()
-   // {
-   //     document.getElementById('three').removeAttribute('disabled');
-     //   let boton= document.getElementById('two')  
-    // esta funcion AGREGAR BOTON POR JS!! <button className="btn btn-primary btn-block" id="two" onClick={handleOnAdd}>Add to Cart</button> <Link to={`/cart/`}><button type="button" id="three" disabled="disabled"> Terminar Compra</button></Link>
-       // boton.parentNode.removeChild(boton);
-    //}
+
     return (
         <div className="card text-center w-50">
             <div className="card-footer">

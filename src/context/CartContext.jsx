@@ -1,7 +1,5 @@
 import { createContext, useState } from "react";
-import { getFirestore } from '../servicios/firebaseService'
-import ItemDetail from "../components/ItemDetail";
-import { productos } from "../components/productos";
+import '../css/itemDetail.css'
 
 export const NotiContext = createContext()//estados y funciones sean globales para todos. 
 
@@ -29,8 +27,7 @@ export default function UseNotiContext({children}){
             }
         })
     }
-    console.log(cartList)
-    console.log(setCartList)
+    
 
     const removeFromCart = (itemId) =>{
         cartList.splice(
