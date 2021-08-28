@@ -31,6 +31,10 @@ Para su instalacion el comando:
 
 - **npm i bootstrap-icons**
 
+### instalar Firebase
+
+- **npm install firebase**
+
 ### Luego de la instalacion para que levante la pagina
 
 - **npm start**
